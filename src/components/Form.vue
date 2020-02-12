@@ -1,5 +1,5 @@
 <template>
-  <form name="contact" method="POST" data-netlify="true">
+  <form @submit="sendForm" name="contact" method="POST" data-netlify="true">
   <p>
     <label>Your Name: <input v-model="form.name" type="text" name="name" /></label>   
   </p>
@@ -30,6 +30,27 @@ export default {
             email: '',
             message: ''
          }
+      }
+   },
+   methods: {
+      encode(data) {
+         return Object.keys(data)
+         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+         .join('&')
+      },
+      sendForm() {
+         fetch('/', {
+            method:'post',
+            headers:{
+               'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: this.encode({
+               'form-name': 'contact',
+               ...this.form
+            })
+         })
+         .then(() => console.log('successfully'))
+         .catch((e) => console.error(e))
       }
    }
 }
