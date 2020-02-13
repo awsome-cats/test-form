@@ -1,8 +1,8 @@
 <template>
    <div>
-      <h1>You're Awesome! Thank you for your submission!</h1>
+      <h3>お問い合わせありがとうございます。</h3>
       <router-link to="/">
-         <button>Back to form</button>
+         <button>フォームに戻る</button>
       </router-link>
    </div>
   

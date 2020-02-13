@@ -1,5 +1,6 @@
 <template>
-  <form @submit.prevent="sendForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<div>
+   <form @submit.prevent="sendForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
      <p class="hidden" style="display: none;">
         <label>Don't fill this out if you're human:
           <input name="bot-field"/>
@@ -18,6 +19,8 @@
         <button type="submit">Send</button>
       </p>
 </form>
+</div>
+  
 <!------
    netlify
    data-netlify="true"
@@ -57,9 +60,8 @@ export default {
                ...this.form
             }), axiosConfig)
          
-         .then(() => console.log("successfully"))
-         .then(() => this.$router.push('/success'))
-         .catch(() => this.$router.push('/fail'))
+         .then(() => this.$router.push({ path: "success"}))
+         .catch(() => this.$router.push({ path: "fail"}))
 
       }
    }
