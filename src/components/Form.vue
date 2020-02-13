@@ -58,7 +58,9 @@ export default {
             }), axiosConfig)
          
          .then(() => console.log("successfully"))
-         .catch((e) => console.error(e))
+         .then(() => this.$router.push('/success'))
+         .catch(() => this.$router.push('/fail'))
+
       }
    }
 }
