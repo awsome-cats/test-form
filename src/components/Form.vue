@@ -15,6 +15,7 @@
       <p>
         <label>Message: <textarea v-model="form.message"    name="message"></textarea></label>
       </p>
+      
       <p>
         <button type="submit">Send</button>
       </p>

@@ -4,6 +4,8 @@
 
 local deploy
 
+- github 自動デプロイではないです
+
 ## Project setup
 
 ```$

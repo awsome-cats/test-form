@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Form from './components/Form.vue'
+import StepForm from './components/StepForm.vue'
 import SubmissionFail from './components/SubmissionFail.vue'
 import SubmissionSuccess from './components/SubmissionSuccess.vue'
 import HelloWorld from './components/HelloWorld.vue'
@@ -16,8 +16,8 @@ export default new Router({
    routes: [
       {
          path:"/",
-         name: "Form",
-         component: Form
+         name: "StepForm",
+         component: StepForm
       },
       {
          path:"/fail",
